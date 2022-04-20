@@ -24,9 +24,14 @@
 - Group members are expected to thoroughly review each other's code, leave comments and ask questions when unclarity arises.  
 - Issues in GitLab should hold labels corresponding to their priority, which will follow a MoSCoW approach.
 - GitLab issues are to hold a status label indicating whether they are: on the backlog, being worked on, in-review or finished.
+- Merge-requests should be responded to within a span of 24 hour (on week days) as to prevent big (and plainly annoying) merge-conflicts.
+
+---
+### 4. Communication
+- Group members are expected to check the Discord server and the WhatsApp group regularly. They are supposed to check these mediums at least twice a day.
 
 --- 
-### 4. Product-orientated
+### 5. Product-orientated
 - Code should be easy to comprehend, so that it is also easy to maintain. Where necessary appropriate comments should be placed. Comments should also not be overdone.
 
 ___
