@@ -1,0 +1,126 @@
+
+[0m[0m
+[0m  Test Subscriber[0m
+[0m    #constructor(topic)[0m
+    [32m  [32m√[39m[0m[90m should reject an undefined topic[0m
+    [32m  [32m√[39m[0m[90m should reject any topic argument that is not a ROSLIB.Topic instance[0m
+    [32m  [32m√[39m[0m[90m should accept a ROSLIB.Topic[0m
+[0m    #start()[0m
+    [32m  [32m√[39m[0m[90m should start before stop[0m
+    [32m  [32m√[39m[0m[90m should start only one time[0m
+    [32m  [32m√[39m[0m[90m should stop only one time[0m
+
+[0m  Test TextSubscriber[0m
+[0m    #constructor(topic, HTMLElement)[0m
+    [32m  [32m√[39m[0m[90m should reject an undefined element[0m
+    [32m  [32m√[39m[0m[90m should reject any element argument that is not an HTMLElement[0m
+    [32m  [32m√[39m[0m[90m should accept a ROSLIB.Topic and an HTML Element as arguments[0m
+    [32m  [32m√[39m[0m[90m should set innerHTML when the the callback gets called[0m
+
+[0m  Test ButtonPublisher[0m
+[0m    #constructor(topic, button)[0m
+    [32m  [32m√[39m[0m[90m should reject an undefined button[0m
+    [32m  [32m√[39m[0m[90m should reject any button argument that is not an HTML Button[0m
+    [32m  [32m√[39m[0m[90m should reject an undefined topic[0m
+    [32m  [32m√[39m[0m[90m should reject any topic argument that is not a ROSLIB.Topic instance[0m
+    [32m  [32m√[39m[0m[90m should accept a ROSLIB.Topic and an HTML Button as arguments[0m
+[0m    #start()[0m
+    [32m  [32m√[39m[0m[90m should subscribe onMouseUp and onMouseDown callbacks to correct events[0m
+    [32m  [32m√[39m[0m[90m should result in onMouseDown being called at mousedown event 1[0m
+    [32m  [32m√[39m[0m[90m should result in onMouseDown being called at mousedown event 2[0m
+[0m    #onMouseUp()[0m
+    [32m  [32m√[39m[0m[90m should publish a sts_msgs/Bool message to topic upon callback[0m
+[0m    #onMouseDown()[0m
+    [32m  [32m√[39m[0m[90m should publish a sts_msgs/Bool message to topic upon callback[0m
+[0m    #stop()[0m
+    [32m  [32m√[39m[0m[90m should unsubscribe onMouseUp and onMouseDown callbacks[0m
+    [32m  [32m√[39m[0m[90m should prevent onMouseDown from being called at mousedown event[0m
+    [32m  [32m√[39m[0m[90m should prevent onMouseUp from being called at mouseup event[0m
+
+[0m  Test IMU Publisher[0m
+[0m    #constructor(topic)[0m
+    [32m  [32m√[39m[0m[90m works when browser has device motion support[0m
+    [32m  [32m√[39m[0m[90m works when browser doesn't have device motion support[0m
+[0m    #createSnapshot()[0m
+    [32m  [32m√[39m[0m[90m publishes to the topic.[0m
+    [32m  [32m√[39m[0m[90m does 0.0 deg quarternions correctly.[0m
+    [32m  [32m√[39m[0m[90m does different deg quarternions correctly.[0m
+    [32m  [32m√[39m[0m[90m has -1 hardcoded in the covar-matrix when phone orientattion has not occured[0m
+    [32m  [32m√[39m[0m[90m has -1 hardcoded in the covar-matrix when motion event has not yet occured[0m
+    [32m  [32m√[39m[0m[90m has -1 hardcoded in the covar-matrix when neither events have occured[0m
+
+[0m  Test IntervalPublisher[0m
+[0m    #constructor(topic)[0m
+    [32m  [32m√[39m[0m[90m should construct with 10Hz when not defined[0m
+    [32m  [32m√[39m[0m[90m should construct with other Hz when defined[0m
+    [32m  [32m√[39m[0m[90m should construct with 10Hz when it is invalid[0m
+[0m    #setPublishFrequency(hz)[0m
+    [32m  [32m√[39m[0m[90m Frequency of 1 Hz works correctly[0m
+    [32m  [32m√[39m[0m[90m Should be able to change frequency during publishing[0m
+    [32m  [32m√[39m[0m[90m Should have the publisher restart at change of frequency[0m
+    [32m  [32m√[39m[0m[90m Frequency of 0 Hz does not work[0m
+[0m    #start()[0m
+    [32m  [32m√[39m[0m[90m should start a timer[0m
+[0m    #stop()[0m
+    [32m  [32m√[39m[0m[90m should stop a timer[0m
+    [32m  [32m√[39m[0m[90m should accept a non-existent timer[0m
+
+[0m  Test MagneticDeclinationPublisher[0m
+[0m    #constructor(topic)[0m
+    [32m  [32m√[39m[0m[90m should reject an undefined topic[0m
+    [32m  [32m√[39m[0m[90m should reject any topic argument that is not a ROSLIB.Topic instance[0m
+    [32m  [32m√[39m[0m[90m should accept a ROSLIB.Topic[0m
+[0m    #onReadOrientation()[0m
+    [32m  [32m√[39m[0m[90m should find the current location[0m
+[0m    #createSnapshot()[0m
+    [32m  [32m√[39m[0m[90m should create snapshot[0m
+    [32m  [32m√[39m[0m[90m should not create duplicate snapshot[0m
+    [32m  [32m√[39m[0m[90m should not create snapshot when orientation is not read yet[0m
+
+[0m  Test SensorPublisher[0m
+[0m    #constructor(topic)[0m
+    [32m  [32m√[39m[0m[90m should reject an undefined topic[0m
+    [32m  [32m√[39m[0m[90m should reject any topic argument that is not a ROSLIB.Topic instance[0m
+    [32m  [32m√[39m[0m[90m should accept a ROSLIB.Topic[0m
+[0m    #start()[0m
+    [32m  [32m√[39m[0m[90m should start before stop[0m
+    [32m  [32m√[39m[0m[90m should start only one time[0m
+    [32m  [32m√[39m[0m[90m should stop only one time[0m
+
+[0m  SliderPublisher[0m
+[0m    #constructor(topic slider)[0m
+    [32m  [32m√[39m[0m[90m should reject an undefined slider[0m
+    [32m  [32m√[39m[0m[90m should reject any slider argument that is not an HTML Input Element[0m
+    [32m  [32m√[39m[0m[90m should reject any slider argument that does not have field type set to range[0m
+    [32m  [32m√[39m[0m[90m should reject an undefined topic[0m
+    [32m  [32m√[39m[0m[90m should reject any topic argument that is not a ROSLIB.Topic instance[0m
+    [32m  [32m√[39m[0m[90m should accept a ROSLIB.Topic and an slider as arguments[0m
+[0m    #createSnapshot()[0m
+    [32m  [32m√[39m[0m[90m should publish an std_msgs/Int32 message with the slider value to topic[0m
+    [32m  [32m√[39m[0m[90m should publish the slider as a number[0m
+    [32m  [32m√[39m[0m[90m should publish a message with the updated slider value when the slider changes[0m
+    [32m  [32m√[39m[0m[90m should not publish double messages[0m
+
+[0m  Test TextPublisher[0m
+[0m    #constructor(topic, inputElement)[0m
+    [32m  [32m√[39m[0m[90m should reject an undefined input element[0m
+    [32m  [32m√[39m[0m[90m should reject any input argument that is not an HTMLInputElement[0m
+    [32m  [32m√[39m[0m[90m should reject an undefined topic[0m
+    [32m  [32m√[39m[0m[90m should reject any topic argument that is not a ROSLIB.Topic instance[0m
+    [32m  [32m√[39m[0m[90m should accept a ROSLIB.Topic and an HTML Input element as arguments[0m
+[0m    #start()[0m
+    [32m  [32m√[39m[0m[90m should subscribe onKeyUp callback to correct events[0m
+[0m    #start()[0m
+    [32m  [32m√[39m[0m[90m should subscribe onInput callback to correct events[0m
+[0m    #onKeyUp()[0m
+    [32m  [32m√[39m[0m[90m should publish a sts_msgs/String message to topic upon callbackwith onEnter=false[0m
+[0m    #onKeyUp()[0m
+    [32m  [32m√[39m[0m[90m should not publish a sts_msgs/String message to topic upon callbackwith onEnter=true and no enter[0m
+[0m    #onKeyUp()[0m
+    [32m  [32m√[39m[0m[90m should publish a sts_msgs/String message to topic upon callbackwith onEnter=true and enter[0m
+[0m    #stop()[0m
+    [32m  [32m√[39m[0m[90m should unsubscribe onKeyUp callback[0m
+
+
+[92m [0m[32m 75 passing[0m[90m (276ms)[0m
+
