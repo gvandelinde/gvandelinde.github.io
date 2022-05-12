@@ -1,2 +1,0 @@
-# gvandelinde.github.io
-Website
