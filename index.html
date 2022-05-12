@@ -19,7 +19,7 @@
         messageType: 'sensor_msgs/Imu'
     });
 
-    ros.connect('ws://localhost:9090');
+    ros.connect('ws://192.168.20.158:9090');
 
     var imu = new SENSORLIB.IMUPublisher(topic);
     imu.start();
