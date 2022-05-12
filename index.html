@@ -1,27 +1,14 @@
-<script src="./roslib.min.js"></script>
-<script src="../build/RosSensorLib.min.js"></script>
-<script src="https://threejs.org/build/three.js"></script>
-<h1 id="connection_info"> status </h1>
+X : <p id="beta"> x </p>
+Y : <p id="gamma"> y </p>
+Z : <p id="alpha"> z </p>
+
 <script>
-    /* Connect to ROS*/
-    var ros = new ROSLIB.Ros();
-
-    ros.on('connection', function() {document.getElementById("connection_info").innerHTML = "Connected to webserver."});
-
-    ros.on('error', function(error) { document.getElementById("connection_info").innerHTML = "Failed to connect to webserver."; });
-
-    ros.on('close', function() { document.getElementById("connection_info").innerHTML = 'Connection to websocket server closed.'; });
-
-    /* Set up a topic, any slider data will be published to /slider */
-    var topic = new ROSLIB.Topic({
-        ros : ros,
-        name : '/gyro',
-        messageType: 'sensor_msgs/Imu'
-    });
-
-    ros.connect('ws://192.168.20.158:9090');
-
-    var imu = new SENSORLIB.IMUPublisher(topic);
-    imu.start();
+let a = document.getElementById("alpha");
+let b = document.getElementById("beta");
+let c = document.getElementById("gamma");
+window.addEventListener('deviceorientation', function(event) {
+	a.innerHTML = event.alpha;
+	b.innerHTML = event.beta;
+	c.innerHTML = event.gamma;
+});
 </script>
-<p> updated </p>
