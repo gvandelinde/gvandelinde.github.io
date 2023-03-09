@@ -1,5 +1,6 @@
-Goddamnit: The deadline for handing in a draft is __March 27 (start week 7)__
-![[Pasted image 20230309140708.png]]
+Important!: The deadline for handing in a draft is __March 27 (start week 7)__:
+
+![ander groepjes](https://github.com/gvandelinde/gvandelinde.github.io/blob/main/examples/Pasted%20image%2020230309140708.png)
 
 ## General guideline
 ```
